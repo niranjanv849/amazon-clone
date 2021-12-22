@@ -1,5 +1,5 @@
 import React from "react";
-import book_img from "./book cover.jpg";
+// import book_img from "./book cover.jpg";
 import "./Product.css";
 function Product({ id, title, image, price, rating }) {
   return (

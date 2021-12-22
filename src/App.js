@@ -9,11 +9,8 @@ function App() {
     <div className="app">
       <Header />
       <Home />
-      {/*ThreeGrid*/}
-      {/*DoubleGrid*/}
-      {/*SingleGrid*/}
-      {/*Footer */}
-    </div>  
+      {/* <Checkout/> */}
+    </div>
   );
 }
 

@@ -14,7 +14,7 @@ function Home() {
             title="The Worst Book to Read at best situation: A practioner's guide"
             price={39.99}
             image="https://images-na.ssl-images-amazon.com/images/I/61ZKNw0xixL.jpg"
-            rating={3}
+            rating={5}
           />
           <Product
             title="boAt Bassheads 100 in Ear Wired Earphones with Mic(Black)"
