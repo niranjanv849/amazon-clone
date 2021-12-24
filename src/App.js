@@ -6,18 +6,18 @@ import Home from "./Home";
 import Checkout from "./Checkout";
 function App() {
   return (
-    <Router>  
+    <Router>
       <div className="app">
-        <Header />
-
+        {/* <Header /> */}
+        <center>
+          <h2>1432</h2>
+        </center>
         <Switch>
           <Route path="/checkout">
             <Checkout />
           </Route>
 
-          <Route path="/">
-            <Home />
-          </Route>
+          <Route path="/">{/* <Home /> */}</Route>
         </Switch>
       </div>
     </Router>
