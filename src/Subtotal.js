@@ -10,7 +10,7 @@ function Subtotal() {
           <>
             <p>
               Subtotal (0 items):
-              <strong>0</strong>
+              <strong> 0</strong>
             </p>
             <small className="subtotal__gift">
               <input type="checkbox" />
