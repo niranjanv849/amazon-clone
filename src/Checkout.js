@@ -7,7 +7,7 @@ function Checkout() {
     <div className="checkout">
       <div className="checkout__left">
         <img
-          classname="checkout__ad"
+          className="checkout__ad"
           src="https://i.ibb.co/BVrStfn/amazon-prime-banner-1.jpg"
           alt=""
         />
