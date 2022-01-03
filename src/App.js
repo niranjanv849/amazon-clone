@@ -19,7 +19,7 @@ function App() {
             <Home />
           </Route>
         </Switch>
-      </div>
+      </div>  
     </Router>
   );
 }
