@@ -1,22 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import { auth } from "./firebase";
 
 function Login() {
+  const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const signIn = (e) => {
     e.preventDefault();
+
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((auth) => {
+        history.push("/");
+      })
+      .catch((error) => alert(error.message));
   };
+
   const register = (e) => {
     e.preventDefault();
+
     auth
-      .createUserWithEmailandPassword(email, password)
+      .createUserWithEmailAndPassword(email, password)
       .then((auth) => {
-        console.log(auth);
+        // it successfully created a new user with email and password
+        if (auth) {
+          history.push("/");
+        }
       })
       .catch((error) => alert(error.message));
   };
@@ -26,12 +38,13 @@ function Login() {
       <Link to="/">
         <img
           className="login__logo"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1280px-Amazon_logo.svg.png"
-          alt="Logo"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png"
         />
       </Link>
+
       <div className="login__container">
-        <h1>Sign in</h1>
+        <h1>Sign-in</h1>
+
         <form>
           <h5>E-mail</h5>
           <input
@@ -39,6 +52,7 @@ function Login() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
+
           <h5>Password</h5>
           <input
             type="password"
@@ -53,16 +67,17 @@ function Login() {
           >
             Sign In
           </button>
-          <p>
-            By Signing-in you agree to Amazon-clone by @niranjanv849's
-            Conditions of use. Please sess our Privacy Notice, and our Terms &
-            Conditions.
-          </p>
-
-          <button onClick={register} className="login__registerButton">
-            Create Your Account
-          </button>
         </form>
+
+        <p>
+          By signing-in you agree to the AMAZON FAKE CLONE madeby LinkedIn
+          @niranjanv849 Conditions of Use. Please see our Privacy Notice, our
+          Cookies Notice and our Interest-Based Ads Notice.
+        </p>
+
+        <button onClick={register} className="login__registerButton">
+          Create your Amazon Account
+        </button>
       </div>
     </div>
   );
