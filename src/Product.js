@@ -4,8 +4,6 @@ import { useStateValue } from "./StateProvider";
 import "./Product.css";
 function Product({ id, title, image, price, rating }) {
   const [{ basket }, dispatch] = useStateValue();
-  console.log("this is basket", basket);
-
   const addToBasket = () => {
     //dispacth item to data layer
     dispatch({
