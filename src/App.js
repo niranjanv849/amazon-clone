@@ -11,9 +11,11 @@ function App() {
       <div className="app">
         <center></center>
         <Switch>
+
           <Route path="/login">
             <Login />
           </Route>
+
           <Route path="/checkout">
             <Header />
             <Checkout />
@@ -23,6 +25,7 @@ function App() {
             <Header />
             <Home />
           </Route>
+          
         </Switch>
       </div>
     </Router>
