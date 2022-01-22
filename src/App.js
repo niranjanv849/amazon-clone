@@ -15,7 +15,6 @@ import { useEffect } from "react";
 
 function App() {
   const [{}, dispatch] = useStateValue();
-
   useEffect(() => {
     // will only run once when the app component loads...
     auth.onAuthStateChanged((authUser) => {
